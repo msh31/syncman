@@ -47,7 +47,7 @@ This repository contains multiple implementations of the same concept:
 
 ```
 rsync-manager/
-├── web-nextjs/             # Next.js web interface
+├── src/                    # Next.js web interface
 └── docs/                   # Documentation and guides
 ```
 
