@@ -1,0 +1,40 @@
+## Rider
+.idea/
+.idea.bak/
+.idea.old/
+*.iml
+
+## Build Artifacts
+#
+# Folders
+##
+[Bb]in/
+[Dd]ebug/
+[Oo]bj/
+[Rr]elease/
+[Tt]mp/
+[Oo]ut/
+[Ww]wwroot/
+[Ww]wwroot-test/
+
+#
+# Files
+##
+*.dll
+*.exe
+*.pdb
+*.bak
+*.log
+*.suo
+*.user
+*.cache
+*.userprefs
+*.resharper
+
+## Avalonia Specific
+*.Avalonia.config
+*.avalonia.config
+*.Avalonia.UserPreferences.json
+*.avalonia.userpreferences.json
+**/build/
+**/pack/

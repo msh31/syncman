@@ -1,0 +1,157 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="rsyncManager.Views.SetupView"
+             Background="#1E1E1E">
+
+    <Grid Margin="60,40,60,40" MaxWidth="700">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Text="syncman" 
+                   FontSize="32" 
+                   FontWeight="Light"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,40"/>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,20">
+            <TextBlock Text="Remote Server IP (optional)" 
+                       FontSize="16" 
+                       Foreground="#B0B0B0"
+                       Margin="0,0,0,8"/>
+            <TextBox Name="ServerIpTextBox"
+                     Watermark="192.168.178.209"
+                     Background="#2D2D2D"
+                     Foreground="White"
+                     BorderBrush="#404040"
+                     BorderThickness="1"
+                     Padding="12"
+                     FontSize="14"
+                     Height="40"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Top">
+                <TextBlock Text="Select a destination :" 
+                           FontSize="16" 
+                           Foreground="#B0B0B0"
+                           Margin="0,0,0,8"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="DestinationTextBox"
+                             Grid.Column="0"
+                             Watermark="/home/admin/movies/"
+                             Background="#2D2D2D"
+                             Foreground="White"
+                             BorderBrush="#404040"
+                             BorderThickness="1"
+                             Padding="12"
+                             FontSize="14"
+                             Height="40"/>
+                    <Button Name="BrowseButton"
+                            Grid.Column="1"
+                            Content="browse.."
+                            Background="#404040"
+                            Foreground="#B0B0B0"
+                            BorderBrush="#404040"
+                            BorderThickness="1"
+                            Padding="12,0"
+                            FontSize="12"
+                            Height="40"
+                            Margin="4,0,0,0"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                <TextBlock Text="List of flags:" 
+                           FontSize="16" 
+                           Foreground="#B0B0B0"
+                           Margin="0,0,0,8"/>
+                <Border Background="#2D2D2D"
+                        BorderBrush="#404040"
+                        BorderThickness="1"
+                        Padding="12">
+                    <StackPanel VerticalAlignment="Center">
+                        <CheckBox Name="RecursiveCheckBox"
+                                  Content="Recursive"
+                                  Foreground="White"
+                                  IsChecked="True"
+                                  Margin="0,4"/>
+                        <CheckBox Name="PartialCheckBox"
+                                  Content="Partial"
+                                  Foreground="White"
+                                  IsChecked="True"
+                                  Margin="0,4"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="3" 
+                Name="DropZone"
+                Background="#1A1A1A"
+                BorderBrush="#404040"
+                BorderThickness="2"
+                Padding="40"
+                Margin="0,0,0,20">
+            <TextBlock Text="drag folders or files here.."
+                       FontSize="16"
+                       Foreground="#666666"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Border>
+
+        <Button Grid.Row="4"
+                Name="ContinueButton"
+                Content="continue  →"
+                Background="#4CAF50"
+                Foreground="White"
+                BorderThickness="0"
+                Padding="24,12"
+                FontSize="16"
+                FontWeight="Medium"
+                HorizontalAlignment="Center"
+                Width="150"
+                Height="45"
+                CornerRadius="4"/>
+    </Grid>
+
+    <UserControl.Styles>
+        <Style Selector="TextBox:focus">
+            <Setter Property="BorderBrush" Value="#4CAF50"/>
+        </Style>
+        
+        <Style Selector="Button:pointerover">
+            <Setter Property="Background" Value="#45A049"/>
+        </Style>
+        
+        <Style Selector="Button#BrowseButton:pointerover">
+            <Setter Property="Background" Value="#505050"/>
+        </Style>
+        
+        <Style Selector="CheckBox">
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Styles>
+
+</UserControl>
